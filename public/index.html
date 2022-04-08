@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD JS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body onload="writeData()">
+    <form id="mainform">
+        <section>
+            <div>
+                <label for="search_value">Enter search value:</label>
+                <input type="text" onkeydown="timeOutSearch();" id="search_value">
+            </div>
+            <div>
+                <label for="clientname">Search:</label>
+                <select name="search_type" id="search_type">
+                    <option value="id">By ID</option>
+                    <option value="class">By Class ID</option>
+                    <option value="name">By Name</option>
+                </select>
+            </div>
+        </section>
+        <section id="addform">
+            <div>
+                <label for="new_class">Choose class:</label>
+                <select id="new_class">
+                    <option value="1">ENIAC</option>
+                    <option value="2">LOVELACE</option>
+                </select>
+            </div>
+            <div>
+                <label for="new_name">Enter name:</label>
+                <input type="text" id="new_name">
+            </div>
+            <div>
+                <input type="button" onclick="postUser();" id="postbtn" value="Add student">
+            </div>
+        </section>
+        <section id="deleteform">
+            <div>
+                <label for="del_id">Enter Student ID:</label>
+                <input type="number" id="del_id">
+            </div>
+            <div>
+                <input type="button" onclick="deleteUser();" id="deletebtn" value="Remove student">
+            </div>
+        </section>
+        <section id="updateform">
+            <div>
+                <label for="updt_id">Enter ID:</label>
+                <input type="number" id="updt_id">
+            </div>
+            <div>
+                <label for="updt_class">New class:</label>
+                <select id="updt_class">
+                    <option value="1">ENIAC</option>
+                    <option value="2">LOVELACE</option>
+                </select>
+            </div>
+            <div>
+                <label for="updt_name">New name:</label>
+                <input type="text" id="updt_name">
+            </div>
+            <div>
+                <input type="button" onclick="updateUser();" id="updatebtn" value="Update product">
+            </div>
+        </section>
+    </form>
+    <table id="stored">
+    </table>
+</body>
+</html>
